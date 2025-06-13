@@ -1,0 +1,91 @@
+body {
+  background-image: url("../images/fundo-login.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 180px;
+}
+
+.login-form p {
+  color: #939090;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #939090;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+}
+
+.links-container a {
+  text-decoration: none;
+  color: #939090;
+}
+
+.links-container a:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 50%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8a2be2;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #7b1ed6;
+}
