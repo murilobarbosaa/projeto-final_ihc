@@ -1,0 +1,154 @@
+body {
+  background-image: url("../images/fundo-registro.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Verdana Pro", Verdana, sans-serif;
+  color: #565353;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container-principal {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  align-items: center;
+}
+
+.container-principal h1 {
+  color: #fff;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.formulario {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.organizador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decoracao {
+  align-items: center;
+  background-color: #aa02ff;
+  color: #aa02ff;
+  border-radius: 20px;
+  width: 50%;
+  user-select: none;
+}
+
+.secao-formulario {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 25px;
+}
+
+.secao-senha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
+}
+
+.formulario hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  width: 100%;
+  margin: 35px auto;
+}
+
+.campo {
+  text-align: left;
+}
+
+.campo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.campo label span {
+  color: #aa02ff;
+  margin-left: 3px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  font-family: "Verdana Pro", Verdana, sans-serif;
+  color: #565353;
+}
+
+.campo select option {
+  color: #565353;
+}
+
+.campo-upload {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.input-invisivel {
+  display: none;
+}
+
+.nome-arquivo {
+  padding: 12px;
+  font-size: 0.9em;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.botao-upload {
+  color: white;
+  background-color: #dfdede;
+  padding: 0 15px;
+  border: none;
+  border-left: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container-botao {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.botao-principal {
+  background-color: #8a2be2;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-principal:hover {
+  background-color: #7b1ed6;
+}

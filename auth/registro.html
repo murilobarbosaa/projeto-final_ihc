@@ -1,10 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/registro.css" />
+    <title>Registro</title>
   </head>
-  <body></body>
+  <body>
+    <main class="container-principal">
+      <h1>CRIE SUA CONTA!</h1>
+
+      <div class="organizador">
+        <div class="decoracao">.</div>
+      </div>
+
+      <form class="formulario">
+        <div class="secao-formulario">
+          <div class="campo">
+            <label for="nome-completo">Nome Completo<span>*</span></label>
+            <input type="text" id="nome-completo" required />
+          </div>
+          <div class="campo">
+            <label for="nome-social">Nome Social</label>
+            <input type="text" id="nome-social" />
+          </div>
+          <div class="campo">
+            <label for="email">E-mail<span>*</span></label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="campo">
+            <label for="estado-civil">Estado Civil<span>*</span></label>
+            <select id="estado-civil" required>
+              <option value="">Selecione</option>
+              <option value="solteiro">Solteiro(a)</option>
+              <option value="casado">Casado(a)</option>
+              <option value="divorciado">Divorciado(a)</option>
+              <option value="viuvo">Viúvo(a)</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="telefone1">Telefone/Celular<span>*</span></label>
+            <input type="tel" id="telefone1" required />
+          </div>
+          <div class="campo">
+            <label for="telefone2">Telefone/Celular 2</label>
+            <input type="tel" id="telefone2" />
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="secao-formulario">
+          <div class="campo">
+            <label for="sexo">Sexo<span>*</span></label>
+            <select id="sexo" required>
+              <option value="">Selecione</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="nao-informar">Prefiro não informar</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="data-nascimento"
+              >Data de Nascimento<span>*</span></label
+            >
+            <input
+              type="text"
+              id="data-nascimento"
+              placeholder="dd/mm/aaaa"
+              required
+            />
+          </div>
+          <div class="campo">
+            <label for="foto-upload">Faça upload da sua foto!</label>
+            <div class="campo-upload">
+              <input type="file" id="foto-upload" class="input-invisivel" />
+              <span class="nome-arquivo">Escolha o arquivo</span>
+              <button type="button" class="botao-upload">Upload</button>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="raca">Raça</label>
+            <select id="raca">
+              <option value="">Selecione</option>
+              <option value="branca">Branca</option>
+              <option value="preta">Preta</option>
+              <option value="parda">Parda</option>
+              <option value="amarela">Amarela</option>
+              <option value="indigena">Indígena</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="como-soube">Como ficou sabendo a cyber?</label>
+            <select id="como-soube">
+              <option value="">Selecione</option>
+              <option value="instagram">Instagram</option>
+              <option value="dce">DCE</option>
+              <option value="amigos">Amigos</option>
+              <option value="sala">Passaram na minha sala</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="pcd">Pessoa com deficiência?<span>*</span></label>
+            <select id="pcd" required>
+              <option value="">Selecione</option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="secao-senha">
+          <div class="campo">
+            <label for="senha">Crie sua senha<span>*</span></label>
+            <input type="password" id="senha" required />
+          </div>
+          <div class="campo">
+            <label for="confirma-senha">Confirme sua senha<span>*</span></label>
+            <input type="password" id="confirma-senha" required />
+          </div>
+        </div>
+
+        <div class="container-botao">
+          <button type="submit" class="botao-principal">Criar Conta</button>
+        </div>
+      </form>
+    </main>
+  </body>
 </html>
