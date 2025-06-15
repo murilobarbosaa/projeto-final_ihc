@@ -1,0 +1,170 @@
+body {
+  background-color: #111111;
+  font-family: "Verdana Pro", Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container-principal {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.coluna {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 800px;
+  justify-content: flex-end;
+}
+
+.cartao {
+  padding: 25px 30px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+#cartao-estagiar {
+  background-color: white;
+  height: 25%;
+  text-align: center;
+}
+
+#cartao-conectar {
+  background-color: #aa02ff;
+  height: 65%;
+  color: white;
+}
+
+#cartao-atletica {
+  background-color: #401956;
+  height: 50%;
+  color: white;
+}
+
+#cartao-impacto,
+#cartao-redes {
+  background-color: white;
+  height: 50%;
+}
+
+#cartao-quemsomos {
+  background-color: #aa02ff;
+  height: 50%;
+  color: white;
+}
+
+#cartao-banner {
+  background-color: white;
+  height: 35%;
+}
+
+#cartao-galeria {
+  background-color: rgb(38, 40, 41);
+  height: 65%;
+  color: white;
+  text-align: center;
+}
+
+.cartao h2 {
+  font-size: 1.9em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+
+#cartao-conectar h2 {
+  font-size: 2.5em;
+}
+
+.logo-placeholder {
+  font-family: monospace;
+  color: #ccc;
+  border: 2px dashed #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.coluna:first-child .logo-placeholder {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+#alinhar {
+  display: flex;
+  justify-content: center;
+}
+
+.botao-iniciar {
+  color: black;
+  text-decoration: underline;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+  transition: color 0.2s;
+  width: 60%;
+}
+
+.botao-iniciar:hover {
+  color: #f0f0f0;
+}
+
+.link-seta {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-decoration: none;
+  align-self: flex-end;
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.link-seta:hover {
+  transform: translateX(10px);
+}
+
+.link-seta-galeria {
+  font-size: 2.5em;
+  font-weight: 100;
+  text-decoration: none;
+  align-self: flex-end;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  padding-left: 5px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+.link-seta-galeria:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+.icone-mais {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #b0b0b0;
+}
