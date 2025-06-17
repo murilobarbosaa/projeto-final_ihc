@@ -50,6 +50,16 @@ body {
   color: white;
 }
 
+#cartao-atletica,
+#cartao-impacto,
+#cartao-redes,
+#cartao-quemsomos,
+#cartao-galeria {
+  display: grid;
+  align-items: end;
+  text-align: center;
+}
+
 #cartao-atletica {
   background-color: #401956;
   height: 50%;
