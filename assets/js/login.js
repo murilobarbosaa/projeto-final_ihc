@@ -1,40 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".formulario");
+  const form = document.getElementById("login-form");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("senha").value;
-    const confirmPassword = document.getElementById("confirma-senha").value;
-
-    if (password !== confirmPassword) {
-      displayMessage("As senhas não coincidem!", "error");
-      return;
-    }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const existingUser = users.find((user) => user.email === email);
-    if (existingUser) {
-      displayMessage("Este e-mail já está cadastrado!", "error");
-      return;
+    const validUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (validUser) {
+      displayMessage("Login bem-sucedido!", "success");
+      setTimeout(() => {
+        window.location.href = "../app/home.html";
+      }, 1500);
+    } else {
+      displayMessage("E-mail ou senha inválidos!", "error");
     }
-
-    const newUser = {
-      email: email,
-      password: password,
-    };
-
-    users.push(newUser);
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-    displayMessage("Conta criada com sucesso!", "success");
-
-    setTimeout(function () {
-      window.location.href = "login.html";
-    }, 2000);
   });
 
   function displayMessage(message, type) {

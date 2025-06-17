@@ -153,37 +153,18 @@ body {
   background-color: #7b1ed6;
 }
 
-.success-popup {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #4bda6c;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  font-size: 1.1em;
+.form-message {
+  margin-top: 15px;
+  font-size: 1em;
   font-weight: bold;
-  animation: fadeInOut 2s ease-in-out;
+  height: 22px;
+  transition: color 0.3s ease-in-out;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    top: 0;
-  }
-  25% {
-    opacity: 1;
-    top: 20px;
-  }
-  75% {
-    opacity: 1;
-    top: 20px;
-  }
-  100% {
-    opacity: 0;
-    top: 0;
-  }
+.form-message.success {
+  color: #28a745;
+}
+
+.form-message.error {
+  color: #dc3545;
 }
