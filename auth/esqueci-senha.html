@@ -4,7 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/assets/images/favicon.ico" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/esqueci-senha.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>Recuperar Senha</title>
   </head>
-  <body></body>
+  <body>
+    <div class="login-container">
+      <form class="login-form" id="forgot-password-form">
+        <div class="logo-container">
+          <img src="../assets/images/logocyber.png" alt="Logo Cyber" />
+        </div>
+
+        <p id="form-instruction">Insira seu e-mail para continuar</p>
+
+        <div class="input-group">
+          <input type="email" id="email" name="email" placeholder="Email" required />
+          <i class="fas fa-envelope icon"></i>
+        </div>
+
+        <div id="new-password-section" class="hidden">
+          <div class="input-group">
+            <input type="password" id="new-password" name="new-password" placeholder="Nova Senha" />
+            <i class="fas fa-lock icon"></i>
+          </div>
+          <div class="input-group">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme a Nova Senha" />
+            <i class="fas fa-lock icon"></i>
+          </div>
+        </div>
+
+        <div class="links-container">
+          <a href="login.html">Voltar para o login</a>
+          <span></span>
+        </div>
+
+        <button type="submit" class="login-button" id="main-button">Verificar</button>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </div>
+
+    <script src="../assets/js/esqueci-senha.js"></script>
+  </body>
 </html>
