@@ -154,11 +154,12 @@ body {
 }
 
 .form-message {
-  margin-top: 15px;
+  margin-top: 5px;
   font-size: 1em;
   font-weight: bold;
   height: 22px;
   transition: color 0.3s ease-in-out;
+  text-align: center;
 }
 
 .form-message.success {
@@ -167,4 +168,25 @@ body {
 
 .form-message.error {
   color: #dc3545;
+}
+
+.back-to-login {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.back-to-login p {
+  color: #565353;
+  margin: 0;
+}
+
+.back-to-login a {
+  color: #8a2be2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-to-login a:hover {
+  text-decoration: underline;
 }
