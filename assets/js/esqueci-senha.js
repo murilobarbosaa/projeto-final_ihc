@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainButton = document.getElementById("main-button");
   const messageContainer = document.getElementById("form-message");
 
-  let formStep = "verify_email"; // Controla o estágio do formulário
+  let formStep = "verify_email";
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -26,15 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const userExists = users.find((user) => user.email === email);
 
     if (userExists) {
-      // E-mail encontrado! Prepara para a próxima etapa.
       displayMessage("E-mail encontrado! Defina sua nova senha.", "success");
       instructionText.textContent = "Crie sua nova senha";
-      emailInput.readOnly = true; // Trava o campo de e-mail
+      emailInput.readOnly = true;
       mainButton.textContent = "Redefinir Senha";
-      newPasswordSection.classList.remove("hidden"); // Mostra os campos de senha
-      formStep = "reset_password"; // Muda para a próxima etapa
+      newPasswordSection.classList.remove("hidden");
+      formStep = "reset_password";
     } else {
-      // E-mail não encontrado
       displayMessage("E-mail não cadastrado em nosso sistema.", "error");
     }
   }
@@ -43,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const newPassword = newPasswordInput.value;
     const confirmPassword = confirmPasswordInput.value;
 
-    // Validação simples
     if (newPassword.length < 6) {
       displayMessage("A nova senha deve ter no mínimo 6 caracteres.", "error");
       return;
@@ -54,24 +51,19 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Lógica para atualizar a senha
     const email = emailInput.value;
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const userIndex = users.findIndex((user) => user.email === email);
 
     if (userIndex !== -1) {
-      // Atualiza a senha do usuário encontrado
       users[userIndex].password = newPassword;
-      // Salva a lista de usuários de volta no localStorage
       localStorage.setItem("users", JSON.stringify(users));
 
       displayMessage("Senha redefinida com sucesso!", "success");
-      // Redireciona para o login após 2 segundos
       setTimeout(() => {
         window.location.href = "login.html";
       }, 2000);
     } else {
-      // Um erro inesperado
       displayMessage("Ocorreu um erro. Tente novamente.", "error");
     }
   }
