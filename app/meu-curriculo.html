@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Cybernetica</title>
+    <title>Meu Currículo - Cybernetica</title>
     <link rel="stylesheet" href="../assets/css/app.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
@@ -23,7 +23,7 @@
         </div>
         <ul class="sidebar-nav">
           <li>
-            <a href="meu-curriculo.html"><i class="fas fa-user-tie"></i> Meu currículo</a>
+            <a href="meu-curriculo.html" class="active"><i class="fas fa-user-tie"></i> Meu currículo</a>
           </li>
           <li>
             <a href="#"><i class="fas fa-briefcase"></i> Minhas candidaturas</a>
@@ -32,19 +32,21 @@
             <a href="#"><i class="fas fa-bell"></i> Alerta de vagas</a>
           </li>
           <li>
-            <a href="meu-curriculo.html" class="active"><i class="fas fa-cog"></i> Configurações</a>
+            <a href="meu-curriculo.html"><i class="fas fa-cog"></i> Configurações</a>
           </li>
         </ul>
       </aside>
 
       <main class="main-content">
         <header>
-          <h1>NOTIFICAÇÕES <sup>1</sup></h1>
+          <h1>MEU CURRÍCULO</h1>
           <img src="../assets/images/logo-cybernetica.png" alt="Logo Cybernetica" class="header-logo" />
         </header>
-        <div class="notification-card">
-          <i class="fas fa-exclamation-circle"></i>
-          <p><strong>Seu perfil ainda não está visível!</strong><br />Envie os dados necessários restantes!</p>
+
+        <div class="data-section">
+          <h3>SEUS DADOS</h3>
+          <p><strong>Nome completo:</strong> <span id="display-nome">--</span></p>
+          <p><strong>E-mail:</strong> <span id="display-email">--</span></p>
         </div>
       </main>
     </div>

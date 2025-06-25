@@ -3,17 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
     const email = document.getElementById("email").value;
     const password = document.getElementById("senha").value;
-
     const users = JSON.parse(localStorage.getItem("users")) || [];
-
     const validUser = users.find(
       (user) => user.email === email && user.password === password
     );
 
     if (validUser) {
+      sessionStorage.setItem("loggedInUserEmail", email);
+
       displayMessage("Login bem-sucedido!", "success");
       setTimeout(() => {
         window.location.href = "../app/home.html";
@@ -26,15 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayMessage(message, type) {
     const messageContainer = document.querySelector(".form-message");
     if (!messageContainer) return;
-
-    messageContainer.classList.remove("success", "error");
-    messageContainer.classList.add(type);
-
+    messageContainer.className = `form-message ${type}`;
     messageContainer.textContent = message;
-
     setTimeout(() => {
       messageContainer.textContent = "";
-      messageContainer.classList.remove("success", "error");
     }, 3000);
   }
 });
