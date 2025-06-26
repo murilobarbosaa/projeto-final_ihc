@@ -122,6 +122,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    const raca = document.getElementById("raca").value;
+    if (!raca || raca === "") {
+      displayMessage("Por favor, selecione sua raça.", "error");
+      return;
+    }
+
     const newUser = {
       nome: document.getElementById("nome-completo").value,
       nomeSocial: document.getElementById("nome-social").value,
@@ -131,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
       telefone2: document.getElementById("telefone2").value,
       sexo: document.getElementById("sexo").value,
       dataNascimento: document.getElementById("data-nascimento").value,
-      raca: document.getElementById("raca").value,
+      raca: raca,
       comoSoube: document.getElementById("como-soube").value,
       pcd: document.getElementById("pcd").value,
       password: password,
@@ -140,6 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
       cursoInteresse: "",
       idiomas: "",
       sintese: "",
+      pretensaoBolsa: "",
+      turnoDisponivel: "",
+      complementos: "",
     };
 
     users.push(newUser);

@@ -27,13 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function populateUserData(user) {
   const mandatoryFields = {
-    weight: 70,
-    fields: ["nome", "email", "estadoCivil", "telefone1", "sexo", "dataNascimento", "pcd"],
+    weight: 50,
+    fields: ["nome", "email", "estadoCivil", "telefone1", "sexo", "dataNascimento", "pcd", "raca"],
   };
   const additionalFields = {
-    weight: 30,
-    fields: ["foto", "habilidades", "cursoInteresse", "idiomas", "sintese"],
+    weight: 50,
+    fields: ["foto", "habilidades", "cursoInteresse", "idiomas", "sintese", "pretensaoBolsa", "turnoDisponivel", "complementos"],
   };
+
   const calculateProgress = (fieldGroup, userData) => {
     let completed = 0;
     fieldGroup.fields.forEach((field) => {
@@ -41,8 +42,10 @@ function populateUserData(user) {
         completed++;
       }
     });
-    return (completed / fieldGroup.fields.length) * fieldGroup.weight;
+    const percentage = (completed / fieldGroup.fields.length) * fieldGroup.weight;
+    return percentage;
   };
+
   const totalPercentage = Math.round(calculateProgress(mandatoryFields, user) + calculateProgress(additionalFields, user));
 
   const progressBarFill = document.querySelector(".progress-bar-fill");
@@ -50,7 +53,7 @@ function populateUserData(user) {
   const progressText = document.querySelector(".progress-info .progress-text span:last-child");
   if (progressText) progressText.textContent = totalPercentage + "%";
   const profileStatusText = document.querySelector(".progress-info .progress-text span:first-child");
-  if (profileStatusText) profileStatusText.textContent = totalPercentage === 100 ? "Perfil completo!" : "Perfil quase completo";
+  if (profileStatusText) profileStatusText.textContent = totalPercentage === 100 ? "Perfil completo!" : "Perfil completo";
 
   const notificationCard = document.getElementById("notificacoes");
   if (notificationCard) {
