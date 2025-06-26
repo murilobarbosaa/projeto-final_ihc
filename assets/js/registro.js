@@ -23,6 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const telefoneInput = document.getElementById("telefone1");
+  if (telefoneInput) {
+    telefoneInput.addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "");
+      value = value.substring(0, 11);
+
+      if (value.length > 7) {
+        value = `(${value.substring(0, 2)})${value.substring(2, 7)}-${value.substring(7, 11)}`;
+      } else if (value.length > 2) {
+        value = `(${value.substring(0, 2)})${value.substring(2)}`;
+      } else if (value.length > 0) {
+        value = `(${value}`;
+      }
+
+      e.target.value = value;
+    });
+  }
+
   function validatePasswordStrength() {
     const password = passwordInput.value;
     const hasMinLength = password.length >= 8;
@@ -44,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function validatePasswordMatch() {
     const password = passwordInput.value;
     const confirmPassword = confirmPasswordInput.value;
-
     if (passwordMatchMessage) {
       if (confirmPassword.length > 0) {
         if (password === confirmPassword) {
@@ -90,10 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
       displayMessage("A senha não atende aos requisitos mínimos.", "error");
       return;
     }
-
     const password = passwordInput.value;
     const confirmPassword = confirmPasswordInput.value;
-
     if (password !== confirmPassword) {
       displayMessage("As senhas não coincidem!", "error");
       return;
@@ -121,6 +136,10 @@ document.addEventListener("DOMContentLoaded", function () {
       pcd: document.getElementById("pcd").value,
       password: password,
       foto: userPhotoBase64,
+      habilidades: "",
+      cursoInteresse: "",
+      idiomas: "",
+      sintese: "",
     };
 
     users.push(newUser);
