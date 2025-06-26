@@ -1,14 +1,10 @@
-/* Estilos COMPARTILHADOS para o layout principal da aplicação */
 body {
   background-color: #f4f7fa;
-  font-family: "Verdana Pro", Verdana, sans-serif; /* AJUSTE: Fonte alterada */
+  font-family: "Verdana Pro", Verdana, sans-serif;
   margin: 0;
-  color: #939090; /* AJUSTE: Cor de texto padrão alterada */
+  color: #939090;
 }
 
-/* ======================================= */
-/* ESTILO DO HEADER SUPERIOR           */
-/* ======================================= */
 .app-header {
   background-color: #ffffff;
   padding: 0 40px;
@@ -33,9 +29,6 @@ body {
   width: auto;
 }
 
-/* ======================================= */
-/* ESTILO DO CORPO DA APLICAÇÃO          */
-/* ======================================= */
 .app-body {
   display: flex;
   align-items: flex-start;
@@ -44,9 +37,6 @@ body {
   box-sizing: border-box;
 }
 
-/* ======================================= */
-/* ESTILOS DA BARRA LATERAL           */
-/* ======================================= */
 .sidebar {
   width: 280px;
   background-color: #ffffff;
@@ -105,7 +95,6 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 0.8em;
-  /* color: #777; -> Removido para herdar a nova cor padrão */
   margin-bottom: 8px;
 }
 
@@ -141,7 +130,7 @@ body {
   align-items: center;
   padding: 15px 25px;
   text-decoration: none;
-  color: #939090; /* AJUSTE: Cor do link alterada */
+  color: #939090;
   border-radius: 10px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;

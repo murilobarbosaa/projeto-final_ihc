@@ -1,9 +1,9 @@
 body {
-  background-image: url("../images/fundo-registro.jpg");
+  background-image: url("../images/fundo-registro.png");
   background-size: cover;
   background-position: center;
   font-family: "Verdana Pro", Verdana, sans-serif;
-  color: #565353;
+  color: #939090;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,11 +94,11 @@ body {
   font-size: 1em;
   box-sizing: border-box;
   font-family: "Verdana Pro", Verdana, sans-serif;
-  color: #565353;
+  color: #939090; /* AJUSTE: Cor do texto do input alterada */
 }
 
 .campo select option {
-  color: #565353;
+  color: #565353; /* Opções do select podem manter um cinza mais escuro para legibilidade */
 }
 
 .campo-upload {
@@ -115,7 +115,7 @@ body {
 .nome-arquivo {
   padding: 12px;
   font-size: 0.9em;
-  color: #777;
+  color: #939090; /* AJUSTE: Cor alterada */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -123,7 +123,7 @@ body {
 }
 
 .botao-upload {
-  color: white;
+  color: #333;
   background-color: #dfdede;
   padding: 0 15px;
   border: none;
@@ -178,7 +178,7 @@ body {
 }
 
 .back-to-login p {
-  color: #565353;
+  color: #939090;
   margin: 0;
 }
 

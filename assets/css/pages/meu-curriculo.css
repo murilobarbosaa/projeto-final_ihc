@@ -1,5 +1,3 @@
-/* Estilos ESPECÍFICOS para a meu-curriculo.html */
-
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -67,17 +65,15 @@
 .content-card .card-subtitle {
   font-size: 0.9em;
   color: #939090;
-  /* margin-top: -15px; -> AJUSTE 2: Removido para aumentar o espaço */
   margin-bottom: 20px;
   font-weight: normal;
 }
 
-/* AJUSTE 1: Cor do texto (opcional) alterada para cinza */
 .optional-text {
   color: #939090;
   font-size: 0.9em;
   font-weight: normal;
-  text-transform: none; /* Garante que não fique em maiúsculo */
+  text-transform: none;
 }
 
 .edit-icon,
