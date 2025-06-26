@@ -26,6 +26,58 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function populateUserData(user) {
+  const mandatoryFields = {
+    weight: 70,
+    fields: ["nome", "email", "estadoCivil", "telefone1", "sexo", "dataNascimento", "pcd"],
+  };
+
+  const additionalFields = {
+    weight: 30,
+    fields: ["foto", "habilidades", "cursoInteresse", "idiomas", "sintese"],
+  };
+
+  function calculateProgress(fieldGroup, userData) {
+    let completed = 0;
+    fieldGroup.fields.forEach((field) => {
+      if (userData[field] && userData[field] !== "") {
+        completed++;
+      }
+    });
+    const percentage = (completed / fieldGroup.fields.length) * fieldGroup.weight;
+    return percentage;
+  }
+
+  const mandatoryProgress = calculateProgress(mandatoryFields, user);
+  const additionalProgress = calculateProgress(additionalFields, user);
+  const totalPercentage = Math.round(mandatoryProgress + additionalProgress);
+
+  const progressBarFill = document.querySelector(".progress-bar-fill");
+  const progressText = document.querySelector(".progress-info .progress-text span:last-child");
+  const profileStatusText = document.querySelector(".progress-info .progress-text span:first-child");
+
+  if (progressBarFill) {
+    progressBarFill.style.width = totalPercentage + "%";
+  }
+  if (progressText) {
+    progressText.textContent = totalPercentage + "%";
+  }
+  if (profileStatusText) {
+    if (totalPercentage === 100) {
+      profileStatusText.textContent = "Perfil completo!";
+    } else {
+      profileStatusText.textContent = "Perfil quase completo";
+    }
+  }
+
+  const notificationCard = document.getElementById("notificacoes");
+  if (notificationCard) {
+    if (totalPercentage === 100) {
+      notificationCard.style.display = "none";
+    } else {
+      notificationCard.style.display = "block";
+    }
+  }
+
   const userNameElement = document.getElementById("user-name");
   const photoContainer = document.getElementById("profile-picture-container");
   const photoImgElement = document.getElementById("user-photo");
@@ -36,7 +88,6 @@ function populateUserData(user) {
 
   if (photoContainer && photoImgElement) {
     photoContainer.innerHTML = "";
-
     if (user.foto) {
       photoImgElement.src = user.foto;
       photoImgElement.style.display = "block";
@@ -46,15 +97,5 @@ function populateUserData(user) {
       defaultIcon.className = "fa-solid fa-user default-user-icon";
       photoContainer.appendChild(defaultIcon);
     }
-  }
-
-  const displayNameElement = document.getElementById("display-nome");
-  const displayEmailElement = document.getElementById("display-email");
-
-  if (displayNameElement) {
-    displayNameElement.textContent = user.nome || "--";
-  }
-  if (displayEmailElement) {
-    displayEmailElement.textContent = user.email || "--";
   }
 }
