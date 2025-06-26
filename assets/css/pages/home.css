@@ -1,0 +1,21 @@
+/* Estilos ESPECÍFICOS para a home.html */
+
+.notification-alert {
+  background-color: #f7f1ff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  color: #5f2a8a;
+  border-left: 5px solid #8a2be2;
+}
+
+.notification-alert i {
+  font-size: 1.8em;
+  margin-right: 20px;
+}
+
+.notification-text p {
+  margin: 0;
+  line-height: 1.4;
+}

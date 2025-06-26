@@ -3,54 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Currículo - Cybernetica</title>
-    <link rel="stylesheet" href="../assets/css/app.css" />
+    <title>Meu Currículo</title>
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/pages/meu-curriculo.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
   <body>
-    <div class="app-container">
+    <header class="app-header">
+      <div class="logo-wrapper">
+        <img src="../assets/images/logocyber.png" alt="Logo Cyber" class="header-logo" />
+      </div>
+    </header>
+
+    <div class="app-body">
       <aside class="sidebar">
         <div class="profile-section">
-          <img id="user-photo" src="../assets/images/user-default.png" alt="Foto do Perfil" />
-          <h2 id="user-name">Carregando...</h2>
-          <div class="progress-bar-container">
+          <div class="profile-picture" id="profile-picture-container">
+            <img id="user-photo" src="" alt="Foto do Perfil" style="display: none" />
+          </div>
+          <h1 id="user-name" class="user-name">Carregando...</h1>
+        </div>
+        <div class="progress-info">
+          <div class="progress-text">
             <span>Perfil quase completo</span>
-            <div class="progress-bar">
-              <div class="progress-bar-fill"></div>
-            </div>
-            <span>90%</span>
+            <span>0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
           </div>
         </div>
-        <ul class="sidebar-nav">
-          <li>
-            <a href="meu-curriculo.html" class="active"><i class="fas fa-user-tie"></i> Meu currículo</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-briefcase"></i> Minhas candidaturas</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-bell"></i> Alerta de vagas</a>
-          </li>
-          <li>
-            <a href="meu-curriculo.html"><i class="fas fa-cog"></i> Configurações</a>
-          </li>
-        </ul>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="meu-curriculo.html" class="active"><i class="fa-solid fa-user-tie"></i><span>Meu currículo</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-briefcase"></i><span>Minhas candidaturas</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-bell"></i><span>Alerta de Vagas</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-cog"></i><span>Configurações</span></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="logout-section">
+          <button id="logout-button" class="logout-button">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Encerrar sessão</span>
+          </button>
+        </div>
       </aside>
 
       <main class="main-content">
-        <header>
-          <h1>MEU CURRÍCULO</h1>
-          <img src="../assets/images/logo-cybernetica.png" alt="Logo Cybernetica" class="header-logo" />
+        <header class="page-header">
+          <h2>MEU CURRÍCULO</h2>
+          <a href="#" class="download-link"><i class="fa-solid fa-download"></i> Fazer download de currículo</a>
         </header>
 
-        <div class="data-section">
-          <h3>SEUS DADOS</h3>
-          <p><strong>Nome completo:</strong> <span id="display-nome">--</span></p>
-          <p><strong>E-mail:</strong> <span id="display-email">--</span></p>
-        </div>
+        <form id="profile-form">
+          <div class="profile-grid">
+            <div class="content-card">
+              <h3>
+                SEUS DADOS <a href="#" class="edit-icon"><i class="fa-solid fa-pencil"></i></a>
+              </h3>
+              <div class="user-data-grid">
+                <p><strong>Nome completo:</strong><span id="display-nome">--</span></p>
+                <p><strong>Nome social:</strong><span id="display-nomeSocial">--</span></p>
+                <p><strong>Estado Civil:</strong><span id="display-estadoCivil">--</span></p>
+                <p><strong>Data de nascimento:</strong><span id="display-dataNascimento">--</span></p>
+                <p><strong>Telefone:</strong><span id="display-telefone1">--</span></p>
+                <p><strong>Telefone 2:</strong><span id="display-telefone2">--</span></p>
+                <p><strong>E-mail:</strong><span id="display-email">--</span></p>
+                <p></p>
+                <p><strong>Sexo:</strong><span id="display-sexo">--</span></p>
+                <p><strong>Raça:</strong><span id="display-raca">--</span></p>
+                <p><strong>Deficiente:</strong><span id="display-pcd">--</span></p>
+              </div>
+            </div>
+
+            <div class="content-card full-width-card">
+              <h3>SOBRE VOCÊ <i class="fa-solid fa-circle-info info-icon"></i></h3>
+              <div class="about-grid">
+                <div class="form-group"><label for="habilidades">Habilidades*</label><input type="text" id="habilidades" name="habilidades" /></div>
+                <div class="form-group"><label for="curso-interesse">Curso de interesse*</label><input type="text" id="curso-interesse" name="cursoInteresse" /></div>
+                <div class="form-group"><label for="pretensao">Pretensão de bolsa:</label><input type="text" id="pretensao" name="pretensaoBolsa" /></div>
+                <div class="form-group"><label for="idiomas">Idiomas*</label><input type="text" id="idiomas" name="idiomas" /></div>
+                <div class="form-group large-field"><label for="sintese">Síntese*</label><textarea id="sintese" name="sintese" rows="4"></textarea></div>
+                <div class="form-group"><label for="turno">Turno disponível:</label><input type="text" id="turno" name="turnoDisponivel" /></div>
+                <div class="form-group"><label for="complementos">Complementos*</label><input type="text" id="complementos" name="complementos" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="save-button">Salvar Alterações</button>
+          </div>
+        </form>
       </main>
     </div>
 
-    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/pages/meu-curriculo.js"></script>
   </body>
 </html>

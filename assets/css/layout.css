@@ -1,3 +1,4 @@
+/* Estilos COMPARTILHADOS para o layout principal da aplicação */
 body {
   background-color: #f4f7fa;
   font-family: "Open Sans", sans-serif;
@@ -5,6 +6,9 @@ body {
   color: #333;
 }
 
+/* ======================================= */
+/* ESTILO DO HEADER SUPERIOR           */
+/* ======================================= */
 .app-header {
   background-color: #ffffff;
   padding: 0 40px;
@@ -29,6 +33,9 @@ body {
   width: auto;
 }
 
+/* ======================================= */
+/* ESTILO DO CORPO DA APLICAÇÃO          */
+/* ======================================= */
 .app-body {
   display: flex;
   align-items: flex-start;
@@ -37,6 +44,9 @@ body {
   box-sizing: border-box;
 }
 
+/* ======================================= */
+/* ESTILOS DA BARRA LATERAL           */
+/* ======================================= */
 .sidebar {
   width: 280px;
   background-color: #ffffff;
@@ -108,10 +118,11 @@ body {
 }
 
 .progress-bar-fill {
-  width: 90%;
+  width: 0%; /* Começa com 0% e o JS preenche */
   height: 100%;
   background-color: #8a2be2;
   border-radius: 4px;
+  transition: width 0.5s ease-in-out;
 }
 
 .sidebar-nav ul {
@@ -136,7 +147,7 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.sidebar-nav li:hover a {
+.sidebar-nav li a:hover {
   background-color: #f0e6ff;
   color: #8a2be2;
 }
@@ -145,6 +156,7 @@ body {
   background-color: #8a2be2;
   color: white;
 }
+
 .sidebar-nav li a.active:hover {
   background-color: #7b1ed6;
 }
@@ -188,6 +200,9 @@ body {
   margin-right: 10px;
 }
 
+/* ======================================= */
+/* ESTILOS DE COMPONENTES COMPARTILHADOS */
+/* ======================================= */
 .main-content {
   flex-grow: 1;
   padding: 0;
@@ -214,24 +229,4 @@ body {
   height: 1px;
   background-color: #e0e0e0;
   margin: 20px 0;
-}
-
-.notification-alert {
-  background-color: #f7f1ff;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  color: #5f2a8a;
-  border-left: 5px solid #8a2be2;
-}
-
-.notification-alert i {
-  font-size: 1.8em;
-  margin-right: 20px;
-}
-
-.notification-text p {
-  margin: 0;
-  line-height: 1.4;
 }
