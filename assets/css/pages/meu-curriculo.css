@@ -24,11 +24,25 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
-.profile-grid {
+.download-link:hover {
+  background-color: #e4d1ff;
+}
+
+.profile-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.grid-col-left,
+.grid-col-right {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 
@@ -36,51 +50,105 @@
   margin-top: 0;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  width: 100%;
+  color: #8a2be2;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.data-card .centered-title {
+  justify-content: center;
 }
 
 .content-card .card-subtitle {
   font-size: 0.9em;
-  color: #777;
-  margin-top: -15px;
+  color: #939090;
+  /* margin-top: -15px; -> AJUSTE 2: Removido para aumentar o espaço */
   margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* AJUSTE 1: Cor do texto (opcional) alterada para cinza */
+.optional-text {
+  color: #939090;
+  font-size: 0.9em;
+  font-weight: normal;
+  text-transform: none; /* Garante que não fique em maiúsculo */
 }
 
 .edit-icon,
 .info-icon {
   color: #8a2be2;
-  font-size: 0.8em;
-}
-
-.user-data-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 20px;
   font-size: 0.9em;
 }
 
-.user-data-grid p {
-  margin: 5px 0;
+.data-columns {
+  display: flex;
+  gap: 20px;
 }
 
-.user-data-grid p span {
-  color: #777;
-  margin-left: 5px;
+.data-col {
+  flex: 1;
 }
 
-.content-card.full-width-card {
+.data-col p {
+  margin: 0 0 18px 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.data-col p strong {
+  font-weight: bold;
+  display: block;
+  color: #939090;
+}
+
+.data-col p span {
+  color: #333;
+  font-weight: 500;
+}
+
+.card-actions {
+  margin-top: 25px;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.edit-data-button {
+  background-color: #8a2be2;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-data-button:hover {
+  background-color: #7b1ed6;
+}
+
+.about-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.about-form-grid .span-two-columns {
   grid-column: 1 / -1;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px 25px;
-}
-
-.about-grid .large-field {
-  grid-column: span 2;
+.side-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .form-group label {
@@ -88,6 +156,11 @@
   font-weight: bold;
   margin-bottom: 8px;
   font-size: 0.9em;
+}
+
+.form-group label span {
+  color: #8a2be2;
+  margin-left: 2px;
 }
 
 .form-group input,
@@ -99,7 +172,46 @@
   border-radius: 8px;
   font-size: 1em;
   box-sizing: border-box;
-  font-family: inherit;
+  font-family: "Verdana Pro", Verdana, sans-serif;
+  color: #939090;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.campo-upload {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-invisivel {
+  display: none;
+}
+
+.nome-arquivo {
+  padding: 12px;
+  font-size: 0.9em;
+  color: #939090;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.botao-upload {
+  color: #333;
+  background-color: #e9ecef;
+  padding: 0 15px;
+  border: none;
+  border-left: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .form-actions {
@@ -116,4 +228,9 @@
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #7b1ed6;
 }
