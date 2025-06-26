@@ -1,5 +1,3 @@
-/* Estilos ESPECÍFICOS para a meu-curriculo.html */
-
 .page-header {
   display: flex;
   justify-content: space-between;
@@ -55,7 +53,6 @@
   height: 100%;
 }
 
-/* Regra geral que agora se aplica a TODOS os títulos de card corretamente */
 .content-card h3,
 fieldset legend {
   margin-top: 0;
@@ -74,8 +71,6 @@ fieldset legend {
 .data-card .centered-title {
   justify-content: center;
 }
-
-/* A regra .no-border-title foi REMOVIDA */
 
 .content-card .card-subtitle,
 .optional-text {
@@ -237,4 +232,22 @@ fieldset {
 
 .about-main-card .about-form-grid {
   flex-grow: 1;
+}
+
+.input-currency-wrapper {
+  position: relative;
+}
+
+.input-currency-wrapper::before {
+  content: "R$";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #939090;
+  font-weight: bold;
+}
+
+#pretensao {
+  padding-left: 50px;
 }

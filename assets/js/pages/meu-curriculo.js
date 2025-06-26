@@ -1,17 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const profileForm = document.getElementById("profile-form");
+  const pretensaoInput = document.getElementById("pretensao");
+  if (pretensaoInput) {
+    pretensaoInput.addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "");
+      value = value.replace(/^0+/, "");
 
+      if (value.length === 0) {
+        e.target.value = "";
+        return;
+      }
+
+      while (value.length < 3) {
+        value = "0" + value;
+      }
+
+      let integerPart = value.substring(0, value.length - 2);
+      let decimalPart = value.substring(value.length - 2);
+
+      if (integerPart.length === 0) {
+        integerPart = "0";
+      }
+
+      integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+      e.target.value = integerPart + "," + decimalPart;
+    });
+  }
+
+  const profileForm = document.getElementById("profile-form");
   if (profileForm) {
     profileForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
       const loggedInUserEmail = sessionStorage.getItem("loggedInUserEmail");
       if (!loggedInUserEmail) {
-        alert("Erro: Sessão não encontrada. Faça o login novamente.");
+        alert("Erro de sessão. Por favor, faça o login novamente.");
+        window.location.href = "../auth/login.html";
         return;
       }
 
       const formData = new FormData(profileForm);
+
+      const pretensaoValue = document.getElementById("pretensao").value.replace(/\D/g, "");
+      formData.set("pretensaoBolsa", pretensaoValue);
+
       const updatedData = Object.fromEntries(formData.entries());
 
       const allUsers = JSON.parse(localStorage.getItem("users")) || [];
