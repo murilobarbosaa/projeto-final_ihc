@@ -54,15 +54,15 @@
       </aside>
 
       <main class="main-content">
-        <header class="page-header content-card">
-          <h2>MEU CURRÍCULO</h2>
-          <a href="#" class="download-link"><i class="fa-solid fa-download"></i> Fazer download de currículo</a>
-        </header>
-
         <form id="profile-form">
           <div class="profile-content-grid">
             <div class="grid-col-left">
-              <div class="content-card upload-card">
+              <header class="page-header content-card">
+                <h2>MEU CURRÍCULO</h2>
+                <a href="#" class="download-link"><i class="fa-solid fa-download"></i> Fazer download de currículo</a>
+              </header>
+
+              <section class="content-card upload-card">
                 <h3>FAÇA UPLOAD DO SEU CURRÍCULO <span class="optional-text">(opcional)</span></h3>
                 <p class="card-subtitle">Envie seu currículo em WORD ou PDF</p>
                 <div class="campo-upload">
@@ -70,72 +70,76 @@
                   <label for="curriculo-upload" class="nome-arquivo">Escolha o arquivo</label>
                   <button type="button" class="botao-upload">Upload</button>
                 </div>
-              </div>
+              </section>
 
-              <div class="content-card">
-                <h3>SOBRE VOCÊ <i class="fa-solid fa-circle-info info-icon"></i></h3>
-                <div class="about-form-grid">
-                  <div class="form-group">
-                    <label for="habilidades">Escolha suas habilidades:<span>*</span></label
-                    ><input type="text" id="habilidades" name="habilidades" />
+              <section class="content-card about-main-card">
+                <fieldset>
+                  <legend>SOBRE VOCÊ <i class="fa-solid fa-circle-info info-icon"></i></legend>
+                  <div class="about-form-grid">
+                    <div class="form-group">
+                      <label for="habilidades">Escolha suas habilidades<span>*</span></label
+                      ><input type="text" id="habilidades" name="habilidades" />
+                    </div>
+                    <div class="form-group">
+                      <label for="curso-interesse">Curso de interesse<span>*</span></label
+                      ><input type="text" id="curso-interesse" name="cursoInteresse" />
+                    </div>
+                    <div class="form-group">
+                      <label for="idiomas">Idiomas<span>*</span></label
+                      ><input type="text" id="idiomas" name="idiomas" />
+                    </div>
+                    <div class="form-group">
+                      <label for="complementos">Complementos<span>*</span></label
+                      ><input type="text" id="complementos" name="complementos" />
+                    </div>
+                    <div class="form-group span-two-columns">
+                      <label for="sintese">Síntese<span>*</span></label
+                      ><textarea id="sintese" name="sintese" rows="5" placeholder="Escreva um texto..."></textarea>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="curso-interesse">Curso de interesse:<span>*</span></label
-                    ><input type="text" id="curso-interesse" name="cursoInteresse" />
-                  </div>
-                  <div class="form-group">
-                    <label for="idiomas">Idiomas<span>*</span></label
-                    ><input type="text" id="idiomas" name="idiomas" />
-                  </div>
-                  <div class="form-group">
-                    <label for="complementos">Complementos<span>*</span></label
-                    ><input type="text" id="complementos" name="complementos" />
-                  </div>
-                  <div class="form-group span-two-columns">
-                    <label for="sintese">Síntese<span>*</span></label
-                    ><textarea id="sintese" name="sintese" rows="5" placeholder="Escreva um texto..."></textarea>
-                  </div>
-                </div>
-              </div>
+                </fieldset>
+              </section>
             </div>
 
             <div class="grid-col-right">
-              <div class="content-card data-card">
+              <section class="content-card data-card">
                 <h3 class="centered-title">SEUS DADOS</h3>
-
                 <div class="data-columns">
                   <div class="data-col">
-                    <p><strong>Nome completo:</strong><span id="display-nome">--</span></p>
-                    <p><strong>Estado Civil:</strong><span id="display-estadoCivil">--</span></p>
+                    <p><strong>Nome:</strong><span id="display-nome">--</span></p>
                     <p><strong>Telefone:</strong><span id="display-telefone1">--</span></p>
                     <p><strong>E-mail:</strong><span id="display-email">--</span></p>
-                    <p><strong>Sexo:</strong><span id="display-sexo">--</span></p>
-                    <p><strong>Deficiente:</strong><span id="display-pcd">--</span></p>
+                    <p><strong>Estado Civil:</strong><span id="display-estadoCivil">--</span></p>
                   </div>
                   <div class="data-col">
-                    <p><strong>Nome social:</strong><span id="display-nomeSocial">--</span></p>
+                    <p><strong>Sexo:</strong><span id="display-sexo">--</span></p>
                     <p><strong>Data de nascimento:</strong><span id="display-dataNascimento">--</span></p>
-                    <p><strong>Telefone 2:</strong><span id="display-telefone2">--</span></p>
+                    <p><strong>Deficiente:</strong><span id="display-pcd">--</span></p>
                     <p><strong>Raça:</strong><span id="display-raca">--</span></p>
                   </div>
                 </div>
-
                 <div class="card-actions">
                   <button type="button" class="edit-data-button">Editar Dados</button>
                 </div>
-              </div>
-              <div class="content-card">
-                <h3>SOBRE VOCÊ <i class="fa-solid fa-circle-info info-icon"></i></h3>
-                <div class="side-form-grid">
-                  <div class="form-group"><label for="pretensao">Pretensão de bolsa:</label><input type="text" id="pretensao" name="pretensaoBolsa" /></div>
-                  <div class="form-group"><label for="turno">Turno disponível:</label><input type="text" id="turno" name="turnoDisponivel" /></div>
-                </div>
-              </div>
-            </div>
-          </div>
+              </section>
 
-          <div class="form-actions">
-            <button type="submit" class="save-button">Salvar Alterações</button>
+              <section class="content-card about-side-card">
+                <fieldset>
+                  <legend>SOBRE VOCÊ <i class="fa-solid fa-circle-info info-icon"></i></legend>
+                  <div class="data-columns">
+                    <div class="data-col">
+                      <div class="form-group"><label for="pretensao">Pretensão de bolsa:</label><input type="text" id="pretensao" name="pretensaoBolsa" /></div>
+                    </div>
+                    <div class="data-col">
+                      <div class="form-group"><label for="turno">Turno disponível:</label><input type="text" id="turno" name="turnoDisponivel" /></div>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="card-actions">
+                  <button type="submit" class="save-button">Salvar Alterações</button>
+                </div>
+              </section>
+            </div>
           </div>
         </form>
       </main>
