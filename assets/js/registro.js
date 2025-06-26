@@ -2,34 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".formulario");
   let userPhotoBase64 = null;
 
+  const passwordInput = document.getElementById("senha");
+  const confirmPasswordInput = document.getElementById("confirma-senha");
+  const passwordValidationMessage = document.getElementById("password-validation-message");
+  const passwordMatchMessage = document.getElementById("password-match-message");
+
+  let isPasswordValid = false;
+
   const dataNascimentoInput = document.getElementById("data-nascimento");
   if (dataNascimentoInput) {
     dataNascimentoInput.addEventListener("input", function (e) {
       let value = e.target.value.replace(/\D/g, "");
       value = value.substring(0, 8);
-
       if (value.length > 4) {
         value = value.substring(0, 2) + "/" + value.substring(2, 4) + "/" + value.substring(4);
       } else if (value.length > 2) {
         value = value.substring(0, 2) + "/" + value.substring(2);
       }
-
       e.target.value = value;
     });
   }
 
-  const passwordInput = document.getElementById("senha");
-  const passwordValidationMessage = document.getElementById("password-validation-message");
-  let isPasswordValid = false;
+  function validatePasswordStrength() {
+    const password = passwordInput.value;
+    const hasMinLength = password.length >= 8;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const hasUpperCase = /[A-Z]/.test(password);
 
-  if (passwordInput && passwordValidationMessage) {
-    passwordInput.addEventListener("input", function () {
-      const password = passwordInput.value;
-
-      const hasMinLength = password.length >= 8;
-      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-      const hasUpperCase = /[A-Z]/.test(password);
-
+    if (passwordValidationMessage) {
       passwordValidationMessage.innerHTML = `
                 <ul>
                     <li class="${hasMinLength ? "valid" : "invalid"}">Mínimo de 8 caracteres</li>
@@ -37,9 +37,35 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li class="${hasUpperCase ? "valid" : "invalid"}">Pelo menos uma letra maiúscula</li>
                 </ul>
             `;
+    }
+    isPasswordValid = hasMinLength && hasSpecialChar && hasUpperCase;
+  }
 
-      isPasswordValid = hasMinLength && hasSpecialChar && hasUpperCase;
+  function validatePasswordMatch() {
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
+
+    if (passwordMatchMessage) {
+      if (confirmPassword.length > 0) {
+        if (password === confirmPassword) {
+          passwordMatchMessage.innerHTML = `<span class="valid">As senhas coincidem</span>`;
+        } else {
+          passwordMatchMessage.innerHTML = `<span class="invalid">As senhas não coincidem</span>`;
+        }
+      } else {
+        passwordMatchMessage.innerHTML = "";
+      }
+    }
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener("input", () => {
+      validatePasswordStrength();
+      validatePasswordMatch();
     });
+  }
+  if (confirmPasswordInput) {
+    confirmPasswordInput.addEventListener("input", validatePasswordMatch);
   }
 
   const fotoUploadInput = document.getElementById("foto-upload");
@@ -65,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const password = document.getElementById("senha").value;
-    const confirmPassword = document.getElementById("confirma-senha").value;
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
     if (password !== confirmPassword) {
       displayMessage("As senhas não coincidem!", "error");
