@@ -119,7 +119,7 @@
                   </div>
                 </div>
                 <div class="card-actions">
-                  <button type="button" class="edit-data-button">Editar Dados</button>
+                  <button type="button" id="open-edit-modal-btn" class="edit-data-button">Editar Dados</button>
                 </div>
               </section>
 
@@ -129,7 +129,7 @@
                   <div class="data-columns">
                     <div class="data-col">
                       <div class="form-group">
-                        <label for="pretensao">Pretensão de bolsa:</label>
+                        <label for="pretensao">Pretensão de bolsa<span>*</span></label>
                         <div class="input-currency-wrapper">
                           <input type="text" id="pretensao" name="pretensaoBolsa" placeholder="0,00" />
                         </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="data-col">
                       <div class="form-group">
-                        <label for="turno">Turno disponível:</label>
+                        <label for="turno">Turno disponível<span>*</span></label>
                         <select id="turno" name="turnoDisponivel">
                           <option value="">Selecione</option>
                           <option value="matutino">Matutino</option>
@@ -156,6 +156,102 @@
           </div>
         </form>
       </main>
+    </div>
+
+    <div id="edit-modal-overlay" class="modal-overlay hidden">
+      <div class="modal-content large">
+        <header class="modal-header">
+          <h2>Editar Seus Dados</h2>
+          <button id="close-modal-btn" class="close-btn">&times;</button>
+        </header>
+        <div class="modal-body">
+          <form id="edit-data-form">
+            <div class="form-section-title">Dados Pessoais</div>
+            <div class="form-columns">
+              <div class="form-col">
+                <div class="form-group"><label for="modal-nome">Nome Completo</label><input type="text" id="modal-nome" name="nome" /></div>
+                <div class="form-group">
+                  <label for="modal-estadoCivil">Estado Civil</label>
+                  <select id="modal-estadoCivil" name="estadoCivil">
+                    <option value="">Selecione</option>
+                    <option value="solteiro">Solteiro(a)</option>
+                    <option value="casado">Casado(a)</option>
+                    <option value="divorciado">Divorciado(a)</option>
+                    <option value="viuvo">Viúvo(a)</option>
+                  </select>
+                </div>
+                <div class="form-group"><label for="modal-telefone1">Telefone</label><input type="text" id="modal-telefone1" name="telefone1" /></div>
+                <div class="form-group">
+                  <label for="modal-sexo">Sexo</label>
+                  <select id="modal-sexo" name="sexo">
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="nao-informar">Prefiro não informar</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="modal-pcd">Pessoa com deficiência?</label>
+                  <select id="modal-pcd" name="pcd">
+                    <option value="">Selecione</option>
+                    <option value="sim">Sim</option>
+                    <option value="nao">Não</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-col">
+                <div class="form-group"><label for="modal-nomeSocial">Nome Social</label><input type="text" id="modal-nomeSocial" name="nomeSocial" /></div>
+                <div class="form-group"><label for="modal-dataNascimento">Data de Nascimento</label><input type="text" id="modal-dataNascimento" name="dataNascimento" placeholder="dd/mm/aaaa" /></div>
+                <div class="form-group"><label for="modal-telefone2">Telefone 2</label><input type="text" id="modal-telefone2" name="telefone2" /></div>
+                <div class="form-group">
+                  <label for="modal-raca">Raça</label>
+                  <select id="modal-raca" name="raca">
+                    <option value="">Selecione</option>
+                    <option value="branca">Branca</option>
+                    <option value="preta">Preta</option>
+                    <option value="parda">Parda</option>
+                    <option value="amarela">Amarela</option>
+                    <option value="indigena">Indígena</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section-title">Informações do Currículo</div>
+            <div class="form-columns">
+              <div class="form-col">
+                <div class="form-group"><label for="modal-habilidades">Habilidades</label><input type="text" id="modal-habilidades" name="habilidades" /></div>
+                <div class="form-group"><label for="modal-idiomas">Idiomas</label><input type="text" id="modal-idiomas" name="idiomas" /></div>
+                <div class="form-group">
+                  <label for="modal-pretensao">Pretensão de bolsa</label>
+                  <div class="input-currency-wrapper"><input type="text" id="modal-pretensao" name="pretensaoBolsa" placeholder="R$ 0,00" /></div>
+                </div>
+              </div>
+              <div class="form-col">
+                <div class="form-group"><label for="modal-curso-interesse">Curso de interesse</label><input type="text" id="modal-curso-interesse" name="cursoInteresse" /></div>
+                <div class="form-group"><label for="modal-complementos">Complementos</label><input type="text" id="modal-complementos" name="complementos" /></div>
+                <div class="form-group">
+                  <label for="modal-turno">Turno disponível</label>
+                  <select id="modal-turno" name="turnoDisponivel">
+                    <option value="">Selecione</option>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                    <option value="noturno">Noturno</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group span-two-columns">
+              <label for="modal-sintese">Síntese</label>
+              <textarea id="modal-sintese" name="sintese" rows="5" placeholder="Escreva um texto sobre você..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+              <button type="submit" class="save-button">Salvar Todos os Dados</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <script src="../assets/js/home.js"></script>
