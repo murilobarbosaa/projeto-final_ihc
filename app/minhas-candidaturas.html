@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas Candidaturas</title>
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/pages/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="logo-wrapper">
+        <img src="../assets/images/logo.png" alt="Logo Cyber" class="header-logo" />
+      </div>
+    </header>
+
+    <div class="app-body">
+      <aside class="sidebar">
+        <div class="profile-section">
+          <div class="profile-picture" id="profile-picture-container">
+            <img id="user-photo" src="" alt="Foto do Perfil" style="display: none" />
+          </div>
+          <h1 id="user-name" class="user-name">Carregando...</h1>
+        </div>
+        <div class="progress-info">
+          <div class="progress-text">
+            <span>Perfil quase completo</span>
+            <span>0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill"></div>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href="minhas-candidaturas.html"><i class="fa-solid fa-briefcase"></i><span>Minhas candidaturas</span></a>
+            </li>
+            <li>
+              <a href="meu-curriculo.html"><i class="fa-solid fa-user-tie"></i><span>Meu currículo</span></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="logout-section">
+          <button id="logout-button" class="logout-button">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Encerrar sessão</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <section class="content-card">
+          <div class="card-header">
+            <h2>MINHAS CANDIDATURAS</h2>
+          </div>
+          <hr />
+          <div class="card-body">
+            <p>Aqui estão as vagas para as quais você já se candidatou. Boa sorte!</p>
+          </div>
+        </section>
+
+        <div id="lista-candidaturas" class="lista-vagas-grid"></div>
+      </main>
+    </div>
+
+    <script src="../assets/js/home.js"></script>
+  </body>
+</html>
