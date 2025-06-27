@@ -38,9 +38,40 @@ body {
   min-height: 200px;
 }
 
+.logo-card-wrapper {
+  position: relative;
+}
+
+.logo-placeholder {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 190px;
+  height: 190px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.logo-placeholder img {
+  width: 100%;
+  height: auto;
+}
+
 #cartao-estagiar {
   background-color: white;
   height: 25%;
+  text-align: center;
+  padding-top: 75px;
+}
+
+#cartao-estagiar h2 {
   text-align: center;
 }
 
@@ -100,19 +131,6 @@ body {
 
 #cartao-conectar h2 {
   font-size: 2.5em;
-}
-
-.logo-placeholder {
-  font-family: monospace;
-  color: #ccc;
-  border: 2px dashed #ddd;
-  padding: 10px;
-  text-align: center;
-}
-
-.coluna:first-child .logo-placeholder {
-  width: 120px;
-  margin-bottom: 15px;
 }
 
 #alinhar {
@@ -177,4 +195,20 @@ body {
   font-size: 1.2em;
   cursor: pointer;
   color: #b0b0b0;
+}
+
+.img-holder {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cyber {
+  width: 350px;
+  height: auto;
+}
+
+#bora-estagiar {
+  margin-top: 30px;
 }

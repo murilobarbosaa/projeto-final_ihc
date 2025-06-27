@@ -12,6 +12,7 @@ body {
 }
 
 .login-form {
+  position: relative;
   background-color: #ffffff;
   padding: 40px;
   border-radius: 20px;
@@ -19,14 +20,28 @@ body {
   width: 100%;
   max-width: 400px;
   text-align: center;
+  margin-top: 100px;
+  padding-top: 110px;
 }
 
 .logo-container {
-  margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .logo-container img {
-  max-width: 180px;
+  max-width: 3000px;
+  width: 100%;
+  height: auto;
 }
 
 .login-form p {
