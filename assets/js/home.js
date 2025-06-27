@@ -53,7 +53,7 @@ function populateUserData(user) {
   const progressText = document.querySelector(".progress-info .progress-text span:last-child");
   if (progressText) progressText.textContent = totalPercentage + "%";
   const profileStatusText = document.querySelector(".progress-info .progress-text span:first-child");
-  if (profileStatusText) profileStatusText.textContent = totalPercentage === 100 ? "Perfil completo!" : "Perfil completo";
+  if (profileStatusText) profileStatusText.textContent = totalPercentage === 100 ? "Perfil completo!" : "Perfil quase completo";
 
   const notificationCard = document.getElementById("notificacoes");
   if (notificationCard) {
@@ -62,15 +62,25 @@ function populateUserData(user) {
 
   const userNameElement = document.getElementById("user-name");
   if (userNameElement) userNameElement.textContent = user.nome || "Usuário";
+
   const photoContainer = document.getElementById("profile-picture-container");
   if (photoContainer) {
-    photoContainer.innerHTML = "";
+    const userPhotoEl = document.getElementById("user-photo");
+
+    const existingIcon = photoContainer.querySelector(".default-user-icon");
+    if (existingIcon) {
+      existingIcon.remove();
+    }
+
     if (user.foto) {
-      const photoImgElement = document.createElement("img");
-      photoImgElement.id = "user-photo";
-      photoImgElement.src = user.foto;
-      photoContainer.appendChild(photoImgElement);
+      if (userPhotoEl) {
+        userPhotoEl.src = user.foto;
+        userPhotoEl.style.display = "block";
+      }
     } else {
+      if (userPhotoEl) {
+        userPhotoEl.style.display = "none";
+      }
       const defaultIcon = document.createElement("i");
       defaultIcon.className = "fa-solid fa-user default-user-icon";
       photoContainer.appendChild(defaultIcon);

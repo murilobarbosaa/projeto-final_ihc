@@ -402,3 +402,67 @@ fieldset {
 .modal-actions .save-button {
   padding: 12px 35px;
 }
+
+#profile-picture-container {
+  cursor: pointer;
+}
+
+.photo-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 30px;
+}
+
+.photo-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  border: 4px solid #e9ecef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder-icon {
+  font-size: 50px;
+  color: #adb5bd;
+}
+
+.photo-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.remove-button {
+  background-color: transparent;
+  color: #dc3545;
+  padding: 12px 30px;
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.remove-button:hover {
+  background-color: #dc3545;
+  color: white;
+}

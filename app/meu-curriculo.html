@@ -158,6 +158,30 @@
       </main>
     </div>
 
+    <div id="photo-modal-overlay" class="modal-overlay hidden">
+      <div class="modal-content" style="max-width: 400px">
+        <header class="modal-header">
+          <h2>Alterar Foto de Perfil</h2>
+          <button id="close-photo-modal-btn" class="close-btn">&times;</button>
+        </header>
+        <div class="modal-body photo-modal-body">
+          <div class="photo-preview" id="modal-photo-preview-container">
+            <img id="modal-photo-preview" src="" alt="Pré-visualização da foto" style="display: none" />
+            <div id="photo-placeholder" class="photo-placeholder-icon">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+          </div>
+
+          <input type="file" id="photo-upload-input" accept="image/png, image/jpeg" style="display: none" />
+
+          <div class="photo-actions">
+            <button id="edit-photo-btn" class="save-button"><i class="fa-solid fa-upload"></i> Enviar nova foto</button>
+            <button id="remove-photo-btn" class="remove-button"><i class="fa-solid fa-trash-can"></i> Remover foto atual</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="edit-modal-overlay" class="modal-overlay hidden">
       <div class="modal-content large">
         <header class="modal-header">
