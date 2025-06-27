@@ -38,6 +38,9 @@
         <nav class="sidebar-nav">
           <ul>
             <li>
+              <a href="home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            </li>
+            <li>
               <a href="meu-curriculo.html"><i class="fa-solid fa-user-tie"></i><span>Meu currículo</span></a>
             </li>
             <li>
@@ -45,9 +48,6 @@
             </li>
             <li>
               <a href="#"><i class="fa-solid fa-bell"></i><span>Alerta de Vagas</span></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-cog"></i><span>Configurações</span></a>
             </li>
           </ul>
         </nav>
@@ -76,6 +76,43 @@
             </div>
           </div>
         </section>
+
+        <div id="vagas-container" style="display: none">
+          <section class="content-card" id="filtro-vagas">
+            <div class="card-header">
+              <h2>FILTRAR VAGAS</h2>
+            </div>
+            <hr />
+            <div class="card-body">
+              <form id="filtro-form" class="filtro-form-grid">
+                <div class="form-group">
+                  <label for="filtro-tecnologia">Tecnologia ou Palavra-chave</label>
+                  <input type="text" id="filtro-tecnologia" placeholder="Ex: JavaScript, Python, Design" />
+                </div>
+                <div class="form-group">
+                  <label for="filtro-horario">Horário</label>
+                  <select id="filtro-horario">
+                    <option value="">Todos os horários</option>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                    <option value="noturno">Noturno</option>
+                    <option value="flexivel">Flexível</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="filtro-bolsa">Bolsa (mínima)</label>
+                  <input type="number" id="filtro-bolsa" placeholder="Ex: 1000" />
+                </div>
+                <div class="filtro-actions">
+                  <button type="submit" class="botao-principal">Filtrar</button>
+                  <button type="button" id="limpar-filtro-btn" class="botao-secundario">Limpar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <div id="lista-vagas" class="lista-vagas-grid"></div>
+        </div>
       </main>
     </div>
 
